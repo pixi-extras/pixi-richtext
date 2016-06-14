@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://pixijs.github.io/examples/_site/js/pixi.js" type="text/javascript" charset="utf-8"></script>
+		<script src="RichText.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.qyengine = {};
+			var renderer, stage;
+			window.onload = function() {
+				renderer = PIXI.autoDetectRenderer(600, 400, {
+					backgroundColor: 0xCCCCCC
+				});
+				document.body.appendChild(renderer.view);
+				stage = new PIXI.Container(0xFFFFFF);
+				window.container = new PIXI.Container();
+				stage.addChild(container);
+				
+				window.richText = new PIXI.extras.RichText();
+				richText.setWordWrap(true);
+				richText.width = 120;
+            	richText.height = 100;
+            	
+				var re1 = new PIXI.extras.RichElementText(1, 0xFFFFFF, 1, "This color is white. ", "Helvetica", 10);
+            	var re2 = new PIXI.extras.RichElementText(2, 0xFFFF00, 1, "And this is yellow. ", "Helvetica", 10);
+            	var re3 = new PIXI.extras.RichElementText(3, 0x0000FF, 1, "This one is blue. ", "Helvetica", 10);
+            	var re4 = new PIXI.extras.RichElementText(4, 0x00FF00, 1, "And green. ", "Helvetica", 10);
+            	var re5 = new PIXI.extras.RichElementText(5, 0xFF0000, 1, "Last one is red ", "Helvetica", 10);
+            	//var reimg = new PIXI.extras.RichElementImage(6, 0xFF0000, 0.5, "img/Player.png");
+            	richText.pushBackElement(re1);
+            	//richText.pushBackElement(reimg);
+            	richText.pushBackElement(re2);
+            	richText.pushBackElement(re3);
+	            richText.pushBackElement(re4);
+	            richText.pushBackElement(re5);
+				container.addChild(richText);
+				
+				animate();
+			}
+			qyengine.getWebGL = function(){
+				return renderer.gl;
+			};
+
+			function animate() {
+				if (!renderer) return;
+				renderer.render(stage);
+				requestAnimationFrame(animate)
+			}
+		</script>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>
