@@ -7,14 +7,13 @@
 		<script src="http://pixijs.github.io/examples/_site/js/pixi.js" type="text/javascript" charset="utf-8"></script>
 		<script src="RichText.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			window.qyengine = {};
 			var renderer, stage;
 			window.onload = function() {
 				renderer = PIXI.autoDetectRenderer(600, 400, {
 					backgroundColor: 0xCCCCCC
 				});
 				document.body.appendChild(renderer.view);
-				stage = new PIXI.Container(0xFFFFFF);
+				stage = new PIXI.Container();
 				window.container = new PIXI.Container();
 				stage.addChild(container);
 				
@@ -39,9 +38,6 @@
 				
 				animate();
 			}
-			qyengine.getWebGL = function(){
-				return renderer.gl;
-			};
 
 			function animate() {
 				if (!renderer) return;
