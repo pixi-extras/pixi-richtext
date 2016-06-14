@@ -16,26 +16,23 @@
 				stage = new PIXI.Container();
 				window.container = new PIXI.Container();
 				stage.addChild(container);
-				
 				window.richText = new PIXI.extras.RichText();
 				richText.setWordWrap(true);
 				richText.width = 120;
-            	richText.height = 100;
-            	
+				richText.height = 100;
 				var re1 = new PIXI.extras.RichElementText(1, 0xFFFFFF, 1, "This color is white. ", "Helvetica", 10);
-            	var re2 = new PIXI.extras.RichElementText(2, 0xFFFF00, 1, "And this is yellow. ", "Helvetica", 10);
-            	var re3 = new PIXI.extras.RichElementText(3, 0x0000FF, 1, "This one is blue. ", "Helvetica", 10);
-            	var re4 = new PIXI.extras.RichElementText(4, 0x00FF00, 1, "And green. ", "Helvetica", 10);
-            	var re5 = new PIXI.extras.RichElementText(5, 0xFF0000, 1, "Last one is red ", "Helvetica", 10);
-            	//var reimg = new PIXI.extras.RichElementImage(6, 0xFF0000, 0.5, "img/Player.png");
-            	richText.pushBackElement(re1);
-            	//richText.pushBackElement(reimg);
-            	richText.pushBackElement(re2);
-            	richText.pushBackElement(re3);
-	            richText.pushBackElement(re4);
-	            richText.pushBackElement(re5);
+				var re2 = new PIXI.extras.RichElementText(2, 0xFFFF00, 1, "And this is yellow. ", "Helvetica", 10);
+				var re3 = new PIXI.extras.RichElementText(3, 0x0000FF, 1, "This one is blue. ", "Helvetica", 10);
+				var re4 = new PIXI.extras.RichElementText(4, 0x00FF00, 1, "And green. ", "Helvetica", 10);
+				var re5 = new PIXI.extras.RichElementText(5, 0xFF0000, 1, "Last one is red ", "Helvetica", 10);
+				//var reimg = new PIXI.extras.RichElementImage(6, 0xFF0000, 0.5, "img/Player.png");
+				richText.pushBackElement(re1);
+				//richText.pushBackElement(reimg);
+				richText.pushBackElement(re2);
+				richText.pushBackElement(re3);
+				richText.pushBackElement(re4);
+				richText.pushBackElement(re5);
 				container.addChild(richText);
-				
 				animate();
 			}
 
