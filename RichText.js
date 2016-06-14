@@ -1,4 +1,3 @@
-
 (function() {
 	var RichElement = function() {
 		this._type = 0;
@@ -51,6 +50,7 @@
 			width: 0,
 			height: 0
 		};
+
 		filePath !== undefined && this.init(tag, color, opacity, filePath);
 	};
 	RichElementImage.prototype = Object.create(RichElement.prototype);
@@ -338,10 +338,11 @@
 						offsetY = this.height - newContentSizeHeight;
 					else if (this._textVerticalAlignment === "center")
 						offsetY = (this.height - newContentSizeHeight) / 2;
+						
 					for (j = 0; j < row.length; j++) {
 						l = row[j];
 						l.x += offsetX;
-						l.y -= offsetY;
+						l.y += offsetY;
 					}
 				}
 			}
