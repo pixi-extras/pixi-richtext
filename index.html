@@ -14,9 +14,9 @@
 				});
 				document.body.appendChild(renderer.view);
 				stage = new PIXI.Container();
-				window.container = new PIXI.Container();
+				var container = new PIXI.Container();
 				stage.addChild(container);
-				window.richText = new PIXI.extras.RichText();
+				var richText = new PIXI.extras.RichText();
 				richText.setWordWrap(true);
 				richText.width = 120;
 				richText.height = 100;
