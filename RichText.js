@@ -51,8 +51,6 @@
 			width: 0,
 			height: 0
 		};
-		//      this._textureType = 0;//不知道干啥的，先去掉
-
 		filePath !== undefined && this.init(tag, color, opacity, filePath);
 	};
 	RichElementImage.prototype = Object.create(RichElement.prototype);
